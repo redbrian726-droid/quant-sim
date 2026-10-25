@@ -1,0 +1,8 @@
+AI use
+
+C++ syntax:
+  Declaring arrays
+  Function definition format
+  Zero division handling
+
+Physical constants

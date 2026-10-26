@@ -28,10 +28,10 @@ if (d!=0){
   else potential2=0;
   
   return potential2;
-}
+};
 
 //Newtonian potential from a field
 float newton_potential_solo(constant,attribute,r){
 potential1=constant*attribute/r;
 return potential1;
-}
+};

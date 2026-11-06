@@ -16,7 +16,7 @@ struct grid{
   double dx,dy,dz;
   double x [gridbins], y [gridbins], z [gridbins];
 
-  void gridinterval(double l,double w,double h){
+  void euclid_gridinterval(double l,double w,double h){
     length=l;
     width=w;
     height=h;
@@ -33,9 +33,9 @@ struct grid{
 };
 
 //Newtonian potential from interaction with another poarticle
-double newton_potential_mutual(double constant, double attribute1,double attribute2,double r1,double r2){
-double d,potential;
-d=std::fabs(r1-r2);
+double newton_potential_mutual(double constant, double attribute1,double attribute2,double coordinate1,double coordinate2){
+double d,potential2;
+d=std::fabs(coordinate1-coordinate2);
 
 //With no distance between particles, there is no potential
 if (d!=0){

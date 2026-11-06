@@ -2,36 +2,52 @@
 
 //Constants necessary for this endeavour:
 //Gravitational constant
-const float g=6.67430e-11f;
+constexpr double g=6.67430e-11;
 //Electrostatic constant
-const float k=8.98755e9f;
+constexpr double k=8.98755e9;
 //Speed of light
-const float c=c = 2.99792e8f;
+constexpr double c=2.99792e8;
+//Defining the precision of the grid by controlling the number of bins
+constexpr int gridbins=100;
 
+//Introducing the grid where the particles exist
+struct grid{
+  double length, width, height;
+  double dx,dy,dz;
+  double x [gridbins], y [gridbins], z [gridbins];
 
-//Introducing the particle, which the project ervolves around
-struct particle{
-float x [100];
-float y [100];
-float z [100];
+  void gridinterval(double l,double w,double h){
+    length=l;
+    width=w;
+    height=h;
+    dx=length/gridbins;
+    dy=width/gridbins;
+    dz=height/gridbins;
+    
+    for (int i=0;i<gridbins;i++){
+      x[i]=i*dx;
+      y[i]=i*dy;
+      z[i]=i*dz;
+    }
+  }
 };
 
 //Newtonian potential from interaction with another poarticle
-float newton_potential_mutual(constant,attribute1,attribute2,r1,r2){
-float d,potential;
+double newton_potential_mutual(double constant, double attribute1,double attribute2,double r1,double r2){
+double d,potential;
 d=std::fabs(r1-r2);
 
 //With no distance between particles, there is no potential
 if (d!=0){
   potential2=constant*attribute1*attribute2/d;
-}
+  }
   else potential2=0;
   
-  return potential2;
+return potential2;
 };
 
 //Newtonian potential from a field
-float newton_potential_solo(constant,attribute,r){
-potential1=constant*attribute/r;
-return potential1;
+double newton_potential_solo(constant,attribute,r){
+  potential1=constant*attribute/r;
+  return potential1;
 };

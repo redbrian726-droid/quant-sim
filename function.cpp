@@ -22,20 +22,20 @@ void fdm_2der (const double wavefunction, double 2derivative[][], double interva
 
 //function for adding matrices together
 void matrix_add(const double matrix1[gridbins][gridbins],int sign, const double matrix2[gridbins][gridbins],double sum[gridbins][gridbins]){
-for(int i=0;i<gridbins;i++){
-for(int j=0;j<gridbins;j++){
-sum[i][j]=marix1[i][j]+sign*matrix2[i][j];
-}
-}
+  for(int i=0;i<gridbins;i++){
+    for(int j=0;j<gridbins;j++){
+      sum[i][j]=marix1[i][j]+sign*matrix2[i][j];
+    }
+  }
 }
 
 // function for multiplying matrices by vectors
 void matrix_vector_multiply(const double matrix[gridbins][gridbins],const double vector[gridbins], double result[gridbins]){
-for(int i=0;i<gridbins;i++){
-for(int j=0;j<gridbins;j++){
-result[i]+=matrix[i][j]*vector[j];
-}
-}
+  for(int i=0;i<gridbins;i++){
+    for(int j=0;j<gridbins;j++){
+      result[i]+=matrix[i][j]*vector[j];
+    }
+  }
 }
 
 

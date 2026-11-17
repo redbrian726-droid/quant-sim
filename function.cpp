@@ -24,7 +24,7 @@ void fdm_2der (double sencdderivative[][], double interval){
 void matrix_add(const double matrix1[gridbins][gridbins],int sign, const double matrix2[gridbins][gridbins],double sum[gridbins][gridbins]){
   for(int i=0;i<gridbins;i++){
     for(int j=0;j<gridbins;j++){
-      sum[i][j]=marix1[i][j]+sign*matrix2[i][j];
+      sum[i][j]=matrix1[i][j]+sign*matrix2[i][j];
     }
   }
 }

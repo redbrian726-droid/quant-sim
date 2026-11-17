@@ -15,7 +15,7 @@ struct rel_grid(const int gridsize){
         std::cout<<"ERROR:Objects with mass cannot reach this speed."<<endl;
         end;
       }
-      lorentz_trans[i]=1/exp((1-(v[i]*v[i]/(c_light*c_light))),(1/2));
+      lorentz_trans[i]=1/std::pow((1-(v[i]*v[i]/(c_light*c_light))),(1/2));
       where=coordinate[i];
       position[where][i]*=lorentz_trans[i];
     }
